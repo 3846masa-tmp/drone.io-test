@@ -7,6 +7,7 @@ build:
       - cd $DRONE_DIR
       - ls -a
       - cat README.md
+      - echo $$TOKEN
       - git log
     when:
       branch: master
