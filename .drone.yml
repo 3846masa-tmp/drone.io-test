@@ -1,8 +1,8 @@
 build:
   image: ubuntu
   commands:
+    - apt-get update && apt-get install -y git
     - cd $DRONE_DIR
     - ls -a
     - cat README.md
-    - apt-get install -y git
     - git log
