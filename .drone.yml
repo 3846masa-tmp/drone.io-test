@@ -1,6 +1,8 @@
 build:
-  image: alpine
+  image: ubuntu
   commands:
     - cd $DRONE_DIR
-    - ls
+    - ls -a
     - cat README.md
+    - apt-get install -y git
+    - git log
