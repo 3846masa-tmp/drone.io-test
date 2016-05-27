@@ -3,11 +3,13 @@ branches:
 build:
   main_build:
     image: node:6
+    environment:
+      TOKEN: $$TOKEN
     commands:
       - cd $DRONE_DIR
       - ls -a
       - cat README.md
-      - echo $$TOKEN
+      - echo $TOKEN
       - git log
     when:
       branch: master
