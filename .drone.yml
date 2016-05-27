@@ -1,7 +1,17 @@
 build:
-  image: node:6
-  commands:
-    - cd $DRONE_DIR
-    - ls -a
-    - cat README.md
-    - git log
+  main_build:
+    image: node:6
+    commands:
+      - cd $DRONE_DIR
+      - ls -a
+      - cat README.md
+      - git log
+    when:
+      branch: master
+deploy:
+  git_push:
+    branch: release
+    remote: https://github.com/3846masa/drone.io-test.git
+    force: false
+    when:
+      branch: master
