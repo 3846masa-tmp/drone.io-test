@@ -1,3 +1,5 @@
+branches:
+  - master
 build:
   main_build:
     image: node:6
